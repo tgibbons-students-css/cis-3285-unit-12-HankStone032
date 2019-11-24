@@ -8,8 +8,16 @@ namespace SubtypeCovariance
 {
     public class User : Entity
     {
-        public string EmailAddress { get; set; }
+        //author Alexander Hagmann
+        //version 11/24/2019
 
-        public DateTime DateOfBirth { get; set; }
+            //Modified User to accept the Interface
+        public User(Guid newID) : base(newID)
+        {
+            EmailAddress = "";
+        }
+        public string EmailAddress { get; private set; }
+
+        public DateTime DateOfBirth { get; private set; }
     }
 }

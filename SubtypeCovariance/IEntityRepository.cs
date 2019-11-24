@@ -9,12 +9,10 @@ namespace SubtypeCovariance
     //author Alexander Hagmann
     //version 11/24/2019
 
-    public class UserRepository : IEntityRepository<User>
+        // Interface for implementing Users and Entitys
+    public interface IEntityRepository<TEntity>
+        where TEntity : Entity
     {
-        // returns the id for a user and accepts the IEntity interface
-        public User GetByID(Guid id)
-        {
-            return new User(id);
-        }
+        TEntity GetByID(Guid id);
     }
 }
